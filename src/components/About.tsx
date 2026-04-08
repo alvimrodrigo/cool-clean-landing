@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 const highlights = [
-  "Equipe técnica certificada",
-  "Atendimento rápido e pontual",
-  "Produtos de alta qualidade",
+  "Equipe técnica qualificada e certificada",
+  "Atendimento rápido, pontual e confiável",
+  "Produtos de alta qualidade e segurança",
   "Garantia em todos os serviços",
   "Orçamento sem compromisso",
-  "Atendimento residencial e comercial",
+  "Atendimento em toda a Região Metropolitana de Salvador",
 ];
 
 const About = () => (
@@ -21,16 +21,21 @@ const About = () => (
           transition={{ duration: 0.6 }}
         >
           <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-2">
-            Quem somos
+            Quem Somos
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Compromisso com qualidade e confiança
+            Sobre a ArClean
           </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            A ArClean é referência em refrigeração e higienização de estofados
+            em Salvador e toda a Região Metropolitana. Atuamos com compromisso,
+            confiança e pontualidade para garantir o melhor resultado em cada
+            serviço.
+          </p>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            A ArClean é especialista em refrigeração e higienização de estofados,
-            atuando há anos no mercado com foco em excelência, pontualidade e
-            satisfação do cliente. Nossos técnicos são qualificados e utilizam
-            equipamentos de última geração para garantir o melhor resultado.
+            Nossos técnicos são qualificados e utilizam equipamentos de última
+            geração, assegurando ambientes mais saudáveis e equipamentos
+            funcionando com máxima eficiência para residências e empresas.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

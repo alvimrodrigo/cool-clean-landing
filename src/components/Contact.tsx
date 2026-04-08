@@ -2,12 +2,18 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const info = [
-  { icon: Phone, label: "(00) 00000-0000" },
+  { icon: Phone, label: "(71) 99999-9999" },
   { icon: Mail, label: "contato@arclean.com.br" },
-  { icon: MapPin, label: "Sua Cidade - Estado" },
+  { icon: MapPin, label: "Salvador — Região Metropolitana" },
   { icon: Clock, label: "Seg - Sáb: 8h às 18h" },
 ];
 
@@ -33,11 +39,23 @@ const Contact = () => (
           onSubmit={(e) => e.preventDefault()}
         >
           <Input placeholder="Seu nome" className="bg-muted/50" />
-          <Input placeholder="Telefone / WhatsApp" className="bg-muted/50" />
-          <Input placeholder="E-mail" type="email" className="bg-muted/50" />
-          <Textarea placeholder="Descreva o serviço desejado..." rows={4} className="bg-muted/50" />
-          <Button type="submit" className="w-full font-semibold" size="lg">
-            Enviar Mensagem
+          <Input placeholder="WhatsApp (com DDD)" className="bg-muted/50" />
+          <Select>
+            <SelectTrigger className="bg-muted/50">
+              <SelectValue placeholder="Tipo de Serviço" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="instalacao-ar">Instalação de Ar-Condicionado</SelectItem>
+              <SelectItem value="manutencao-ar">Manutenção de Ar-Condicionado</SelectItem>
+              <SelectItem value="manutencao-geladeira">Manutenção de Geladeira</SelectItem>
+              <SelectItem value="limpeza-sofa">Limpeza de Sofá</SelectItem>
+              <SelectItem value="limpeza-poltrona">Higienização de Poltrona / Carpete</SelectItem>
+              <SelectItem value="lavagem-estofado">Lavagem de Estofados</SelectItem>
+              <SelectItem value="outro">Outro</SelectItem>
+            </SelectContent>
+          </Select>
+          <Button type="submit" className="w-full font-semibold text-base" size="lg">
+            Solicitar Orçamento
           </Button>
         </motion.form>
 
@@ -60,7 +78,7 @@ const Contact = () => (
           <div className="mt-4">
             <Button variant="secondary" size="lg" className="font-semibold" asChild>
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5571999999999"
                 target="_blank"
                 rel="noopener noreferrer"
               >

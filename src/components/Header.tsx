@@ -6,8 +6,8 @@ import logo from "@/assets/arclean-logo.png";
 const navLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Contato", href: "#contato" },
+  { label: "Quem Somos", href: "#sobre" },
+  { label: "Solicite Orçamento", href: "#contato" },
 ];
 
 const Header = () => {
@@ -31,7 +31,7 @@ const Header = () => {
             </a>
           ))}
           <Button size="sm" asChild>
-            <a href="tel:+5500000000000">
+            <a href="tel:+5571999999999">
               <Phone className="w-4 h-4 mr-2" />
               Ligue Agora
             </a>
@@ -61,7 +61,7 @@ const Header = () => {
           ))}
           <div className="px-6 pt-2">
             <Button size="sm" className="w-full" asChild>
-              <a href="tel:+5500000000000">
+              <a href="tel:+5571999999999">
                 <Phone className="w-4 h-4 mr-2" />
                 Ligue Agora
               </a>
