@@ -18,7 +18,7 @@ const Hero = () => (
       <img
         src={heroBg}
         alt="Técnico ArClean realizando manutenção de ar-condicionado em Salvador"
-        className="w-full h-full object-cover object-top md:object-center"
+        className="w-full h-full object-cover object-[70%_20%] md:object-center"
       />
       {/* Overlay duplo para máximo contraste */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
