@@ -1,21 +1,26 @@
 import { motion } from "framer-motion";
-import { Snowflake, Wrench, Wind, SprayCan, Sofa, Droplets } from "lucide-react";
+import { Snowflake, Wrench, Wind, SprayCan, Sofa, Droplets, BedDouble, Fan } from "lucide-react";
 
 const refrigeracao = [
   {
     icon: Snowflake,
     title: "Instalação de Ar-Condicionado",
-    desc: "Instalação profissional de splits e multi-splits com garantia em Salvador e região.",
+    desc: "Especialista em todos os tipos de equipamentos de refrigeração e climatização residencial, comercial e industrial em Salvador.",
   },
   {
     icon: Wrench,
     title: "Manutenção de Ar-Condicionado",
-    desc: "Manutenção preventiva e corretiva para garantir eficiência energética e durabilidade.",
+    desc: "Manutenção preventiva e corretiva para garantir eficiência energética e durabilidade dos seus equipamentos.",
+  },
+  {
+    icon: Fan,
+    title: "Limpeza Preventiva e Higienização de Ar-condicionado",
+    desc: "Higienização completa de Split e demais modelos, eliminando fungos e bactérias do sistema de climatização.",
   },
   {
     icon: Wind,
     title: "Manutenção de Geladeiras",
-    desc: "Reparo e manutenção de geladeiras residenciais e comerciais em toda Salvador.",
+    desc: "Reparo e manutenção de geladeiras residenciais e comerciais em toda Salvador e Região Metropolitana.",
   },
 ];
 
@@ -23,7 +28,7 @@ const higienizacao = [
   {
     icon: SprayCan,
     title: "Limpeza de Sofás em Salvador",
-    desc: "Lavagem a seco profissional de sofás, eliminando ácaros, bactérias e manchas.",
+    desc: "Lavagem com Secagem Rápida e Profissional de sofás, eliminando ácaros, bactérias e manchas.",
   },
   {
     icon: Sofa,
@@ -31,9 +36,14 @@ const higienizacao = [
     desc: "Limpeza especializada de poltronas, carpetes e tapetes com produtos antialérgicos.",
   },
   {
+    icon: BedDouble,
+    title: "Lavagem de Colchões",
+    desc: "Higienização profunda de colchões com foco em saúde e bem-estar — elimine ácaros e proporcione noites mais saudáveis.",
+  },
+  {
     icon: Droplets,
-    title: "Lavagem de Estofados a Seco",
-    desc: "Serviço completo de lavagem a seco para estofados automotivos e residenciais.",
+    title: "Lavagem de Estofados",
+    desc: "Serviço completo com Lavagem com Secagem Rápida e Profissional para estofados automotivos e residenciais.",
   },
 ];
 
@@ -57,7 +67,7 @@ const ServiceGroup = ({
     <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
       {title}
     </h2>
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {services.map((s, i) => (
         <motion.div
           key={s.title}
@@ -66,10 +76,10 @@ const ServiceGroup = ({
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={cardVariants}
-          className="group rounded-xl bg-card p-8 shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)] transition-shadow duration-300 border border-border"
+          className="group rounded-xl bg-card p-6 shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)] transition-shadow duration-300 border border-border"
         >
           <div className="w-14 h-14 rounded-lg bg-accent flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
-            <s.icon className="w-7 h-7 text-accent-foreground group-hover:text-primary-foreground transition-colors" />
+            <s.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
           </div>
           <h3 className="text-lg font-bold text-foreground mb-2">{s.title}</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">

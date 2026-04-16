@@ -16,8 +16,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#inicio">
-          <img src={logo} alt="ArClean" className="h-10 md:h-12 w-auto" />
+        <a href="#inicio" className="flex items-center">
+          <img src={logo} alt="ArClean — Refrigeração e Higienização" className="h-12 md:h-14 w-auto" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -31,7 +31,7 @@ const Header = () => {
             </a>
           ))}
           <Button size="sm" asChild>
-            <a href="tel:+5571999999999">
+            <a href="tel:+5571983815959">
               <Phone className="w-4 h-4 mr-2" />
               Ligue Agora
             </a>
@@ -61,7 +61,7 @@ const Header = () => {
           ))}
           <div className="px-6 pt-2">
             <Button size="sm" className="w-full" asChild>
-              <a href="tel:+5571999999999">
+              <a href="tel:+5571983815959">
                 <Phone className="w-4 h-4 mr-2" />
                 Ligue Agora
               </a>

@@ -9,8 +9,14 @@ const Hero = () => (
     className="relative min-h-[90vh] flex items-center overflow-hidden"
   >
     <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
+      <img
+        src={heroBg}
+        alt="Técnico ArClean realizando manutenção de ar-condicionado em Salvador"
+        className="w-full h-full object-cover object-center"
+      />
+      {/* Overlay duplo para máximo contraste */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
+      <div className="absolute inset-0 bg-black/30" />
     </div>
 
     <div className="container relative z-10 py-32 md:py-40">
@@ -20,17 +26,23 @@ const Hero = () => (
         transition={{ duration: 0.7 }}
         className="max-w-2xl"
       >
-        <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 backdrop-blur-sm px-4 py-2 text-sm text-primary-foreground mb-6">
+        <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 backdrop-blur-sm px-4 py-2 text-sm text-primary-foreground mb-6 border border-primary-foreground/20">
           <Snowflake className="w-4 h-4" />
           Refrigeração &amp; Higienização Profissional
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-6">
+        <h1
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-6"
+          style={{ textShadow: "0 2px 16px rgba(0,0,0,0.5)" }}
+        >
           Ar puro e ambiente{" "}
           <span className="text-secondary">saudável</span> para sua família
         </h1>
 
-        <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-lg">
+        <p
+          className="text-lg md:text-xl text-primary-foreground/95 mb-8 max-w-lg"
+          style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}
+        >
           Instalação, manutenção e higienização de ar-condicionado e estofados
           com qualidade e pontualidade.
         </p>
@@ -39,7 +51,7 @@ const Hero = () => (
           <Button
             size="lg"
             variant="secondary"
-            className="text-base font-semibold"
+            className="text-base font-semibold shadow-xl"
             asChild
           >
             <a href="#contato">
@@ -49,8 +61,7 @@ const Hero = () => (
           </Button>
           <Button
             size="lg"
-            variant="outline"
-            className="text-base font-semibold border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+            className="text-base font-semibold bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-xl"
             asChild
           >
             <a href="#servicos">Nossos Serviços</a>
