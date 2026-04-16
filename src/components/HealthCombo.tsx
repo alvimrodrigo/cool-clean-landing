@@ -86,7 +86,16 @@ const HealthCombo = () => (
             className="font-semibold text-base shadow-xl whitespace-nowrap"
             asChild
           >
-            <a href="#contato">Quero o Combo</a>
+            <a
+              href={
+                "https://wa.me/5571983815959?text=" +
+                encodeURIComponent("Quero o combo de estofado + ar condicionado")
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quero o Combo
+            </a>
           </Button>
         </div>
       </motion.div>

@@ -33,7 +33,7 @@ const Header = () => {
           <Button size="sm" asChild>
             <a href="tel:+5571983815959">
               <Phone className="w-4 h-4 mr-2" />
-              Ligue Agora
+              Ligar Agora
             </a>
           </Button>
         </nav>
@@ -63,7 +63,7 @@ const Header = () => {
             <Button size="sm" className="w-full" asChild>
               <a href="tel:+5571983815959">
                 <Phone className="w-4 h-4 mr-2" />
-                Ligue Agora
+                Ligar Agora
               </a>
             </Button>
           </div>
