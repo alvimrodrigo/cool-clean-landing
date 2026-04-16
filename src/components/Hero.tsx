@@ -18,11 +18,11 @@ const Hero = () => (
       <img
         src={heroBg}
         alt="Técnico ArClean realizando manutenção de ar-condicionado em Salvador"
-        className="w-full h-full object-cover object-[70%_20%] md:object-center"
+        className="w-full h-full object-cover object-[75%_center] md:object-center"
       />
-      {/* Overlay duplo para máximo contraste */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
-      <div className="absolute inset-0 bg-black/30" />
+      {/* Gradiente lateral: escuro atrás do texto, transparente sobre o profissional */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent" />
     </div>
 
     <div className="container relative z-10 py-32 md:py-40">
@@ -32,22 +32,22 @@ const Hero = () => (
         transition={{ duration: 0.7 }}
         className="max-w-2xl"
       >
-        <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 backdrop-blur-sm px-4 py-2 text-sm text-primary-foreground mb-6 border border-primary-foreground/20">
+        <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 backdrop-blur-sm px-4 py-2 text-sm text-primary-foreground mb-6 border border-primary-foreground/20 drop-shadow-md">
           <Snowflake className="w-4 h-4" />
           Refrigeração &amp; Higienização Profissional
         </div>
 
         <h1
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-6"
-          style={{ textShadow: "0 2px 16px rgba(0,0,0,0.5)" }}
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-6 drop-shadow-md"
+          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.85), 0 1px 4px rgba(0,0,0,0.9)" }}
         >
           Ar puro e ambiente{" "}
           <span className="text-secondary">saudável</span> para sua família
         </h1>
 
         <p
-          className="text-lg md:text-xl text-primary-foreground/95 mb-8 max-w-lg"
-          style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}
+          className="text-lg md:text-xl text-primary-foreground/95 mb-8 max-w-lg drop-shadow-md"
+          style={{ textShadow: "0 2px 16px rgba(0,0,0,0.85), 0 1px 4px rgba(0,0,0,0.9)" }}
         >
           Instalação, manutenção e higienização de ar-condicionado e estofados
           com qualidade e pontualidade.
