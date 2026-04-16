@@ -19,8 +19,8 @@ const refrigeracao = [
   },
   {
     icon: Wind,
-    title: "Manutenção de Geladeiras",
-    desc: "Reparo e manutenção de geladeiras residenciais e comerciais em toda Salvador e Região Metropolitana.",
+    title: "Manutenção Industrial",
+    desc: "Manutenção especializada em câmaras frias e balcões refrigerados para o setor comercial e industrial em Salvador.",
   },
 ];
 

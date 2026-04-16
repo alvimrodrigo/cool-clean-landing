@@ -1,19 +1,11 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 const WHATSAPP_URL =
   "https://wa.me/5571983815959?text=" +
   encodeURIComponent(
-    "Olá, vim pelo site e gostaria de mais informações sobre os serviços!"
+    "Olá, vim pelo site e gostaria de solicitar um orçamento!"
   );
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -42,51 +34,22 @@ const Contact = () => (
         <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-2">
           Fale conosco
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           Solicite seu Orçamento
         </h2>
+        <p className="max-w-xl mx-auto text-muted-foreground">
+          Atendimento rápido pelo WhatsApp ou ligue diretamente. Resposta em minutos!
+        </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-        <motion.form
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="space-y-5 bg-card p-8 rounded-xl border border-border shadow-[var(--card-shadow)]"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <Input placeholder="Seu nome" className="bg-muted/50" />
-          <Input placeholder="WhatsApp (com DDD)" className="bg-muted/50" />
-          <Select>
-            <SelectTrigger className="bg-muted/50">
-              <SelectValue placeholder="Tipo de Serviço" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="instalacao-ar">Instalação de Ar-Condicionado</SelectItem>
-              <SelectItem value="manutencao-ar">Manutenção de Ar-Condicionado</SelectItem>
-              <SelectItem value="higienizacao-ar">Higienização de Ar-Condicionado</SelectItem>
-              <SelectItem value="manutencao-geladeira">Manutenção de Geladeira</SelectItem>
-              <SelectItem value="limpeza-sofa">Limpeza de Sofá</SelectItem>
-              <SelectItem value="limpeza-poltrona">Higienização de Poltrona / Carpete</SelectItem>
-              <SelectItem value="lavagem-colchao">Lavagem de Colchão</SelectItem>
-              <SelectItem value="lavagem-estofado">Lavagem de Estofados</SelectItem>
-              <SelectItem value="combo">Pacote Combinado (Refrigeração + Estofados)</SelectItem>
-              <SelectItem value="outro">Outro</SelectItem>
-            </SelectContent>
-          </Select>
-          <Button type="submit" className="w-full font-semibold text-base" size="lg">
-            Solicitar Orçamento
-          </Button>
-        </motion.form>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="flex flex-col justify-center gap-6"
-        >
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="max-w-3xl mx-auto bg-card p-8 md:p-10 rounded-2xl border border-border shadow-[var(--card-shadow)]"
+      >
+        <div className="grid sm:grid-cols-2 gap-5 mb-8">
           {info.map((item) => (
             <div key={item.label} className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
@@ -95,36 +58,46 @@ const Contact = () => (
               <span className="text-foreground font-medium">{item.label}</span>
             </div>
           ))}
+        </div>
 
-          <div className="mt-4 flex flex-col sm:flex-row gap-3">
-            <Button
-              size="lg"
-              className="font-semibold bg-[#25D366] hover:bg-[#1ebe57] text-white"
-              asChild
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Button
+            size="lg"
+            className="flex-1 font-semibold bg-[#25D366] hover:bg-[#1ebe57] text-white shadow-lg"
+            asChild
+          >
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <WhatsAppIcon className="w-5 h-5 mr-2" />
+              Solicitar Orçamento
+            </a>
+          </Button>
+          <Button
+            size="lg"
+            className="flex-1 font-semibold"
+            asChild
+          >
+            <a href="tel:+5571983815959">
+              <Phone className="w-5 h-5 mr-2" />
+              Ligar Agora
+            </a>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="font-semibold"
+            asChild
+          >
+            <a
+              href="https://instagram.com/arcleanba"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram @arcleanba"
             >
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="w-5 h-5 mr-2" />
-                Chamar no WhatsApp
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="font-semibold"
-              asChild
-            >
-              <a
-                href="https://instagram.com/arcleanba"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram className="w-5 h-5 mr-2" />
-                @arcleanba
-              </a>
-            </Button>
-          </div>
-        </motion.div>
-      </div>
+              <Instagram className="w-5 h-5" />
+            </a>
+          </Button>
+        </div>
+      </motion.div>
     </div>
   </section>
 );

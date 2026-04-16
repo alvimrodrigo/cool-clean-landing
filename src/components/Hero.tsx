@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Snowflake } from "lucide-react";
+import { ArrowRight, Snowflake, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+
+const WHATSAPP_URL =
+  "https://wa.me/5571983815959?text=" +
+  encodeURIComponent(
+    "Olá, vim pelo site e gostaria de solicitar um orçamento!"
+  );
 
 const Hero = () => (
   <section
@@ -12,7 +18,7 @@ const Hero = () => (
       <img
         src={heroBg}
         alt="Técnico ArClean realizando manutenção de ar-condicionado em Salvador"
-        className="w-full h-full object-cover object-center"
+        className="w-full h-full object-cover object-top md:object-center"
       />
       {/* Overlay duplo para máximo contraste */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
@@ -54,7 +60,7 @@ const Hero = () => (
             className="text-base font-semibold shadow-xl"
             asChild
           >
-            <a href="#contato">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               Solicite um Orçamento
               <ArrowRight className="w-5 h-5 ml-2" />
             </a>
@@ -64,7 +70,10 @@ const Hero = () => (
             className="text-base font-semibold bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-xl"
             asChild
           >
-            <a href="#servicos">Nossos Serviços</a>
+            <a href="tel:+5571983815959">
+              <Phone className="w-5 h-5 mr-2" />
+              Ligar Agora
+            </a>
           </Button>
         </div>
       </motion.div>

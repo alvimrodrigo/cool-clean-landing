@@ -4,7 +4,7 @@ import logo from "@/assets/arclean-logo.png";
 const WHATSAPP_URL =
   "https://wa.me/5571983815959?text=" +
   encodeURIComponent(
-    "Olá, vim pelo site e gostaria de mais informações sobre os serviços!"
+    "Olá, vim pelo site e gostaria de solicitar um orçamento!"
   );
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
