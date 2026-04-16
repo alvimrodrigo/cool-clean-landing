@@ -62,29 +62,26 @@ const Contact = () => (
 
         <div className="flex flex-col sm:flex-row gap-3">
           <Button
-            size="lg"
-            className="flex-1 font-semibold bg-[#25D366] hover:bg-[#1ebe57] text-white shadow-lg"
+            className="flex-1 font-bold text-base md:text-lg h-14 md:h-16 bg-[#25D366] hover:bg-[#1ebe57] text-white shadow-lg rounded-xl"
             asChild
           >
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              <WhatsAppIcon className="w-5 h-5 mr-2" />
+              <WhatsAppIcon className="w-6 h-6 mr-2" />
               Solicitar Orçamento
             </a>
           </Button>
           <Button
-            size="lg"
-            className="flex-1 font-semibold"
+            className="flex-1 font-bold text-base md:text-lg h-14 md:h-16 shadow-lg rounded-xl"
             asChild
           >
             <a href="tel:+5571983815959">
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-6 h-6 mr-2" />
               Ligar Agora
             </a>
           </Button>
           <Button
-            size="lg"
             variant="outline"
-            className="font-semibold"
+            className="font-semibold h-14 md:h-16 px-5 rounded-xl"
             asChild
           >
             <a
