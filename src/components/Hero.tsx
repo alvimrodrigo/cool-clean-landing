@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Snowflake } from "lucide-react";
+import { ArrowRight, Snowflake, Phone } from "lucide-react"; // Importei o Phone para o botão de ligar
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -12,7 +12,9 @@ const Hero = () => (
       <img
         src={heroBg}
         alt="Técnico ArClean realizando manutenção de ar-condicionado em Salvador"
-        className="w-full h-full object-cover object-center"
+        className="w-full h-full object-cover object-[75%_center] md:object-center" 
+        /* Explicação DevOps: O object-[75%] empurra a foto para a esquerda no mobile, 
+           mantendo o rosto dele (que está na direita) centralizado na tela do celular */
       />
       {/* Overlay duplo para máximo contraste */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
@@ -44,7 +46,7 @@ const Hero = () => (
           style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}
         >
           Instalação, manutenção e higienização de ar-condicionado e estofados
-          com qualidade e pontualidade.
+          com qualidade e pontualidade em Salvador e Região.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
@@ -54,17 +56,24 @@ const Hero = () => (
             className="text-base font-semibold shadow-xl"
             asChild
           >
-            <a href="#contato">
-              Solicite um Orçamento
+            {/* Link direto para o WhatsApp já que removemos o formulário */}
+            <a href="https://wa.me/5571983815959?text=Olá, vim pelo site e gostaria de um orçamento!">
+              Solicitar Orçamento
               <ArrowRight className="w-5 h-5 ml-2" />
             </a>
           </Button>
+          
+          {/* Novo Botão Ligar Agora - Excelente para converter público mais velho */}
           <Button
             size="lg"
-            className="text-base font-semibold bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-xl"
+            variant="outline"
+            className="text-base font-semibold bg-white/10 backdrop-blur-md text-white border-white/20 hover:bg-white/20 shadow-xl"
             asChild
           >
-            <a href="#servicos">Nossos Serviços</a>
+            <a href="tel:71983815959">
+              <Phone className="w-5 h-5 mr-2" />
+              Ligar Agora
+            </a>
           </Button>
         </div>
       </motion.div>
