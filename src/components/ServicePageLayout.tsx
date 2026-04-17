@@ -13,8 +13,11 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
+export type ServiceCategory = "refrigeracao" | "estofados";
+
 export type ServicePageProps = {
   slug: string;
+  category: ServiceCategory;
   title: string;
   metaDescription: string;
   h1: string;
@@ -26,21 +29,67 @@ export type ServicePageProps = {
   closing: string;
 };
 
-const otherServices = [
-  { slug: "limpeza-de-sofa-salvador", label: "Limpeza de Sofá em Salvador" },
+const allServices: { slug: string; label: string; category: ServiceCategory }[] = [
+  // Refrigeração
+  {
+    slug: "instalacao-ar-condicionado-salvador",
+    label: "Instalação de Ar-Condicionado em Salvador",
+    category: "refrigeracao",
+  },
+  {
+    slug: "manutencao-ar-condicionado-salvador",
+    label: "Manutenção de Ar-Condicionado em Salvador",
+    category: "refrigeracao",
+  },
+  {
+    slug: "higienizacao-ar-condicionado-salvador",
+    label: "Higienização de Ar-Condicionado em Salvador",
+    category: "refrigeracao",
+  },
+  {
+    slug: "climatizacao-industrial-salvador",
+    label: "Climatização Industrial e Comercial em Salvador",
+    category: "refrigeracao",
+  },
+  // Estofados
+  {
+    slug: "limpeza-de-sofa-salvador",
+    label: "Limpeza de Sofá em Salvador",
+    category: "estofados",
+  },
   {
     slug: "limpeza-de-poltronas-salvador",
     label: "Limpeza de Poltronas e Carpetes em Salvador",
+    category: "estofados",
   },
   {
     slug: "limpeza-de-colchao-salvador",
     label: "Limpeza de Colchão em Salvador",
+    category: "estofados",
   },
   {
     slug: "limpeza-de-estofados-salvador",
     label: "Limpeza de Estofados em Salvador",
+    category: "estofados",
   },
 ];
+
+// Alterna refrigeração e estofados, removendo o slug atual
+const getRelated = (currentSlug: string) => {
+  const refri = allServices.filter(
+    (s) => s.category === "refrigeracao" && s.slug !== currentSlug,
+  );
+  const esto = allServices.filter(
+    (s) => s.category === "estofados" && s.slug !== currentSlug,
+  );
+  const result: typeof allServices = [];
+  const max = Math.max(refri.length, esto.length);
+  for (let i = 0; i < max; i++) {
+    if (refri[i]) result.push(refri[i]);
+    if (esto[i]) result.push(esto[i]);
+  }
+  return result.slice(0, 4);
+};
 
 const ServicePageLayout = ({
   slug,
@@ -57,6 +106,7 @@ const ServicePageLayout = ({
   const whatsappUrl =
     "https://wa.me/5571983815959?text=" + encodeURIComponent(whatsAppMessage);
   const canonical = `https://arclean.com.br/${slug}`;
+  const related = getRelated(slug);
 
   return (
     <>
@@ -207,27 +257,25 @@ const ServicePageLayout = ({
           </div>
         </section>
 
-        {/* OUTROS SERVIÇOS */}
+        {/* SERVIÇOS RELACIONADOS */}
         <section className="py-14 md:py-20 bg-accent/30 border-t border-border">
           <div className="container max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
-              Outros Serviços de Higienização em Salvador
+              Serviços Relacionados em Salvador
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
-              {otherServices
-                .filter((s) => s.slug !== slug)
-                .map((s) => (
-                  <Link
-                    key={s.slug}
-                    to={`/${s.slug}`}
-                    className="group flex items-center justify-between gap-3 bg-card p-5 rounded-xl border border-border hover:border-primary hover:shadow-[var(--card-shadow-hover)] transition-all"
-                  >
-                    <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {s.label}
-                    </span>
-                    <ArrowRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                ))}
+              {related.map((s) => (
+                <Link
+                  key={s.slug}
+                  to={`/${s.slug}`}
+                  className="group flex items-center justify-between gap-3 bg-card p-5 rounded-xl border border-border hover:border-primary hover:shadow-[var(--card-shadow-hover)] transition-all"
+                >
+                  <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {s.label}
+                  </span>
+                  <ArrowRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              ))}
             </div>
           </div>
         </section>
