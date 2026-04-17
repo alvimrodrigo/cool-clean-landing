@@ -1,5 +1,16 @@
 import { motion } from "framer-motion";
-import { Snowflake, Wrench, Wind, SprayCan, Sofa, Droplets, BedDouble, Fan } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  Snowflake,
+  Wrench,
+  Wind,
+  SprayCan,
+  Sofa,
+  Droplets,
+  BedDouble,
+  Fan,
+  ArrowRight,
+} from "lucide-react";
 
 const refrigeracao = [
   {
@@ -29,21 +40,25 @@ const higienizacao = [
     icon: SprayCan,
     title: "Limpeza de Sofás em Salvador",
     desc: "Lavagem com Secagem Rápida e Profissional de sofás, eliminando ácaros, bactérias e manchas.",
+    href: "/limpeza-de-sofa-salvador",
   },
   {
     icon: Sofa,
     title: "Higienização de Poltronas e Carpetes",
     desc: "Limpeza especializada de poltronas, carpetes e tapetes com produtos antialérgicos.",
+    href: "/limpeza-de-poltronas-salvador",
   },
   {
     icon: BedDouble,
     title: "Lavagem de Colchões",
     desc: "Higienização profunda de colchões com foco em saúde e bem-estar — elimine ácaros e proporcione noites mais saudáveis.",
+    href: "/limpeza-de-colchao-salvador",
   },
   {
     icon: Droplets,
     title: "Lavagem de Estofados",
     desc: "Serviço completo com Lavagem com Secagem Rápida e Profissional para estofados automotivos e residenciais.",
+    href: "/limpeza-de-estofados-salvador",
   },
 ];
 
@@ -56,12 +71,58 @@ const cardVariants = {
   }),
 };
 
+type ServiceItem = {
+  icon: typeof Snowflake;
+  title: string;
+  desc: string;
+  href?: string;
+};
+
+const ServiceCard = ({ s, i }: { s: ServiceItem; i: number }) => {
+  const content = (
+    <>
+      <div className="w-14 h-14 rounded-lg bg-accent flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+        <s.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+      </div>
+      <h3 className="text-lg font-bold text-foreground mb-2">{s.title}</h3>
+      <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+      {s.href && (
+        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all">
+          Saiba Mais
+          <ArrowRight className="w-4 h-4" />
+        </span>
+      )}
+    </>
+  );
+
+  const className =
+    "group block rounded-xl bg-card p-6 shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)] transition-shadow duration-300 border border-border h-full";
+
+  return (
+    <motion.div
+      custom={i}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={cardVariants}
+    >
+      {s.href ? (
+        <Link to={s.href} className={className}>
+          {content}
+        </Link>
+      ) : (
+        <div className={className}>{content}</div>
+      )}
+    </motion.div>
+  );
+};
+
 const ServiceGroup = ({
   title,
   services,
 }: {
   title: string;
-  services: typeof refrigeracao;
+  services: ServiceItem[];
 }) => (
   <div className="mb-14 last:mb-0">
     <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
@@ -69,23 +130,7 @@ const ServiceGroup = ({
     </h2>
     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {services.map((s, i) => (
-        <motion.div
-          key={s.title}
-          custom={i}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={cardVariants}
-          className="group rounded-xl bg-card p-6 shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)] transition-shadow duration-300 border border-border"
-        >
-          <div className="w-14 h-14 rounded-lg bg-accent flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
-            <s.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
-          </div>
-          <h3 className="text-lg font-bold text-foreground mb-2">{s.title}</h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {s.desc}
-          </p>
-        </motion.div>
+        <ServiceCard key={s.title} s={s} i={i} />
       ))}
     </div>
   </div>
