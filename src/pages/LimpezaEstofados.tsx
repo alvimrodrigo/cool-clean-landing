@@ -3,6 +3,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 const LimpezaEstofados = () => (
   <ServicePageLayout
     slug="limpeza-de-estofados-salvador"
+    category="estofados"
     title="Limpeza de Estofados em Salvador | Residências e Veículos — ArClean"
     metaDescription="Limpeza de estofados em Salvador: bancos de carro, sofás, puffs, carrinhos de bebê e cabeceiras. Pacote completo para casa toda. Orçamento no WhatsApp."
     h1="Limpeza de Estofados em Salvador para Residências e Veículos"

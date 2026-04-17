@@ -3,6 +3,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 const LimpezaSofa = () => (
   <ServicePageLayout
     slug="limpeza-de-sofa-salvador"
+    category="estofados"
     title="Limpeza de Sofá em Salvador | Secagem Rápida — ArClean"
     metaDescription="Limpeza de sofá em Salvador com secagem rápida, remoção de manchas, ácaros e odores. Atendemos linho, suede, veludo e couro. Orçamento no WhatsApp!"
     h1="Limpeza de Sofá em Salvador com Secagem Rápida"

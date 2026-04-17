@@ -3,6 +3,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 const LimpezaColchao = () => (
   <ServicePageLayout
     slug="limpeza-de-colchao-salvador"
+    category="estofados"
     title="Limpeza de Colchão em Salvador | Higienização Profunda — ArClean"
     metaDescription="Higienização de colchão em Salvador: elimine ácaros, fungos e bactérias. Alívio para alergia e rinite, noites de sono saudáveis. Orçamento no WhatsApp."
     h1="Limpeza de Colchão em Salvador com Higienização Profunda"
