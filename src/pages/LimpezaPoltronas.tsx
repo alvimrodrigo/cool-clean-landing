@@ -3,6 +3,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 const LimpezaPoltronas = () => (
   <ServicePageLayout
     slug="limpeza-de-poltronas-salvador"
+    category="estofados"
     title="Limpeza de Poltronas e Carpetes em Salvador — ArClean"
     metaDescription="Limpeza de poltronas, cadeiras estofadas e carpetes em Salvador. Renove a estética dos seus móveis e remova poeira encruada. Orçamento no WhatsApp."
     h1="Limpeza de Poltronas e Carpetes em Salvador"

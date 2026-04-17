@@ -17,21 +17,25 @@ const refrigeracao = [
     icon: Snowflake,
     title: "Instalação de Ar-Condicionado",
     desc: "Especialista em todos os tipos de equipamentos de refrigeração e climatização residencial, comercial e industrial em Salvador.",
+    href: "/instalacao-ar-condicionado-salvador",
   },
   {
     icon: Wrench,
     title: "Manutenção de Ar-Condicionado",
     desc: "Manutenção preventiva e corretiva para garantir eficiência energética e durabilidade dos seus equipamentos.",
+    href: "/manutencao-ar-condicionado-salvador",
   },
   {
     icon: Fan,
     title: "Limpeza Preventiva e Higienização de Ar-condicionado",
     desc: "Higienização completa de Split e demais modelos, eliminando fungos e bactérias do sistema de climatização.",
+    href: "/higienizacao-ar-condicionado-salvador",
   },
   {
     icon: Wind,
     title: "Manutenção Industrial",
     desc: "Manutenção especializada em câmaras frias e balcões refrigerados para o setor comercial e industrial em Salvador.",
+    href: "/climatizacao-industrial-salvador",
   },
 ];
 

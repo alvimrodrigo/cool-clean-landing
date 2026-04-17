@@ -11,6 +11,10 @@ import LimpezaSofa from "./pages/LimpezaSofa.tsx";
 import LimpezaColchao from "./pages/LimpezaColchao.tsx";
 import LimpezaPoltronas from "./pages/LimpezaPoltronas.tsx";
 import LimpezaEstofados from "./pages/LimpezaEstofados.tsx";
+import InstalacaoArCondicionado from "./pages/InstalacaoArCondicionado.tsx";
+import ManutencaoArCondicionado from "./pages/ManutencaoArCondicionado.tsx";
+import HigienizacaoArCondicionado from "./pages/HigienizacaoArCondicionado.tsx";
+import ClimatizacaoIndustrial from "./pages/ClimatizacaoIndustrial.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,10 +28,16 @@ const App = () => (
           <Sonner />
           <Routes>
             <Route path="/" element={<Index />} />
+            {/* Estofados */}
             <Route path="/limpeza-de-sofa-salvador" element={<LimpezaSofa />} />
             <Route path="/limpeza-de-colchao-salvador" element={<LimpezaColchao />} />
             <Route path="/limpeza-de-poltronas-salvador" element={<LimpezaPoltronas />} />
             <Route path="/limpeza-de-estofados-salvador" element={<LimpezaEstofados />} />
+            {/* Refrigeração */}
+            <Route path="/instalacao-ar-condicionado-salvador" element={<InstalacaoArCondicionado />} />
+            <Route path="/manutencao-ar-condicionado-salvador" element={<ManutencaoArCondicionado />} />
+            <Route path="/higienizacao-ar-condicionado-salvador" element={<HigienizacaoArCondicionado />} />
+            <Route path="/climatizacao-industrial-salvador" element={<ClimatizacaoIndustrial />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
