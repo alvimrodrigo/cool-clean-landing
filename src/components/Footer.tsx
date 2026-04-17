@@ -23,7 +23,7 @@ const Footer = () => (
   <footer className="bg-foreground py-14">
     <div className="container">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-        <a href="#inicio" className="bg-card rounded-lg px-4 py-3">
+        <a href="/#inicio" className="bg-card rounded-lg px-4 py-3">
           <img src={logo} alt="ArClean — Refrigeração e Higienização" className="h-14 w-auto" />
         </a>
 

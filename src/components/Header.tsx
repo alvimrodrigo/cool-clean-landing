@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/arclean-logo.png";
 
 const navLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Quem Somos", href: "#sobre" },
-  { label: "Solicite Orçamento", href: "#contato" },
+  { label: "Início", href: "/#inicio" },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Quem Somos", href: "/#sobre" },
+  { label: "Solicite Orçamento", href: "/#contato" },
 ];
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-20 md:h-24">
-        <a href="#inicio" className="flex items-center">
+        <a href="/#inicio" className="flex items-center">
           <img src={logo} alt="ArClean — Refrigeração e Higienização" className="h-16 md:h-20 w-auto" />
         </a>
 
